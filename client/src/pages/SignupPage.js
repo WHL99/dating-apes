@@ -17,20 +17,8 @@ function SignupPage(props) {
   const [aboutMe, setAboutMe] = useState('');
   const [area, setArea] = useState('');
   const [errorMessage, setErrorMessage] = useState(undefined);
-  const navigate = useNavigate();
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
-  const handleBirthday = (e) => setBirthday(e.target.value);
-  const handleGender = (e) => setGender(e.target.value);
-  const handleLang = (e) => setLang(e.target.value);
-  const handleAnimal = (e) => setAnimal(e.target.value);
-  const handleHeight = (e) => setHeight(e.target.value);
-  const handleWeight = (e) => setWeight(e.target.value);
-  const handleAboutMe = (e) => setAboutMe(e.target.value);
-  const handleArea = (e) => setArea(e.target.value);
   const [image, setImage] = useState("");
-
+  const navigate = useNavigate();
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     const data = new FormData()
@@ -89,55 +77,55 @@ function SignupPage(props) {
         <h3>Please fill the form for your pet_</h3>
         <div className='Signup-9-1'>
           <label>email :</label>
-          <input type="email" name="email" value={email} onChange={handleEmail} />
+          <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className='Signup-9-1'>
           <label>password :</label>
-          <input type="password" name="password" value={password} onChange={handlePassword} />
+          <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
         <div className='container-Signup-9-1'>
           <div className='container-inner'>
             <label>name :</label>
-            <input style={{ width: '11.5vw', marginRight: '0.5vw', borderTopRightRadius: '10px' }} type="text" name="name" value={name} onChange={handleName} required />
+            <input style={{ width: '11.5vw', marginRight: '0.5vw', borderTopRightRadius: '10px' }} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
           <div className='container-inner'>
             <label>birthday :</label>
-            <input style={{ padding: '3px', width: '11.8vw', textAlign: 'center', borderBottomLeftRadius: '10px' }} type="date" name="birthday" value={birthday} onChange={handleBirthday} required />
+            <input style={{ padding: '3px', width: '11.8vw', textAlign: 'center', borderBottomLeftRadius: '10px' }} type="date" name="birthday" value={birthday} onChange={(e) => setBirthday(e.target.value)} required />
           </div>
         </div>
         <div className='container-Signup-9-1'>
           <div className='container-inner-3'>
             <label>gender :</label>
-            <select style={{ width: '8vw', marginRight: '0.6vw', borderTopRightRadius: '10px' }} name="gender" value={gender} onChange={handleGender} required>
+            <select style={{ width: '8vw', marginRight: '0.6vw', borderTopRightRadius: '10px' }} name="gender" value={gender} onChange={(e) => setGender(e.target.value)} required>
               {genderOptions}
             </select>
           </div>
 
           <div className='container-inner-3'>
             <label>type :</label>
-            <select style={{ width: '8vw', marginRight: '0.6vw', borderBottomLeftRadius: '10px' }} name="animal" onChange={handleAnimal} value={animal} required>
+            <select style={{ width: '8vw', marginRight: '0.6vw', borderBottomLeftRadius: '10px' }} name="animal" onChange={(e) => setAnimal(e.target.value)} value={animal} required>
               {animalOptions}
             </select>
           </div>
 
           <div className='container-inner-3'>
             <label>language :</label>
-            <input style={{ width: '7vw', borderBottomLeftRadius: '10px' }} type="text" name="lang" value={lang} onChange={handleLang} required />
+            <input style={{ width: '7vw', borderBottomLeftRadius: '10px' }} type="text" name="lang" value={lang} onChange={(e) => setLang(e.target.value)} required />
           </div>
         </div>
 
         <div className='container-Signup-9-1'>
           <div className='container-inner'>
             <label>height (cm) :</label>
-            <input style={{ width: '7.3vw', marginRight: '0.6vw', borderTopRightRadius: '10px' }} type="number" name="height" value={height || ''} onChange={handleHeight} required />
+            <input style={{ width: '7.3vw', marginRight: '0.6vw', borderTopRightRadius: '10px' }} type="number" name="height" value={height || ''} onChange={(e) => setHeight(e.target.value)} required />
           </div>
           <div className='container-inner'>
             <label>weight (kg) :</label>
-            <input style={{ width: '7.3vw', marginRight: '0.6vw', borderBottomLeftRadius: '10px', borderTopRightRadius: '10px' }} type="number" name="weight" value={weight || ''} onChange={handleWeight} required />
+            <input style={{ width: '7.3vw', marginRight: '0.6vw', borderBottomLeftRadius: '10px', borderTopRightRadius: '10px' }} type="number" name="weight" value={weight || ''} onChange={(e) => setWeight(e.target.value)} required />
           </div>
           <div className='container-inner'>
             <label>area :</label>
-            <select style={{ width: '7.7vw', borderBottomLeftRadius: '10px', height: '3.8vh' }} name="area" value={area} onChange={handleArea}>
+            <select style={{ width: '7.7vw', borderBottomLeftRadius: '10px', height: '3.8vh' }} name="area" value={area} onChange={(e) => setArea(e.target.value)}>
               {areaOptions}
             </select>
           </div>
@@ -145,7 +133,7 @@ function SignupPage(props) {
 
         <div className='Signup-9-1'>
           <label>about me :</label>
-          <textarea style={{ border: 'none', marginBottom: '1vh' }} type="text" name="aboutMe" value={aboutMe} onChange={handleAboutMe} cols="40" rows="5" required />
+          <textarea style={{ border: 'none', marginBottom: '1vh' }} type="text" name="aboutMe" value={aboutMe} onChange={(e) => setAboutMe(e.target.value)} cols="40" rows="5" required />
         </div>
 
         <div className='Signup-9-1'>
