@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 const userSchema = new Schema({
   email: { type: String, unique: true, required: true },
@@ -13,14 +13,15 @@ const userSchema = new Schema({
   lang: String,
   aboutMe: String,
   passwordHash: String,
-  url: String,
   messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
 },
   {
-    timestamps: true
+    timestamps: true,
+    url: String,
+
   }
 );
 
-const User = model("User", userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

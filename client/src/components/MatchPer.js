@@ -1,10 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export default function MatchPer() {
-    const randomValue = Math.floor(Math.random() * (97 - 40 + 1) + 40);
+  const randomValue = Math.floor(Math.random() * (97 - 40 + 1) + 40);
 
-    return (
-        <p>{randomValue}%</p>
-
-    )
+  return <p>{randomValue}%</p>;
 }
