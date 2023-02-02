@@ -22,7 +22,7 @@ function UserDetailsPage(props) {
 
   useEffect(() => {
     getUser();
-  });
+  }, []);
 
   return (
     <div className='UserList-1' style={{ fontFamily: 'Quicksand' }}>
