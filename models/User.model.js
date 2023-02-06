@@ -13,12 +13,11 @@ const userSchema = new Schema({
   lang: String,
   aboutMe: String,
   passwordHash: String,
+  url: String,
   messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
 },
   {
     timestamps: true,
-    url: String,
-
   }
 );
 

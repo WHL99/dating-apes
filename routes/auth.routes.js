@@ -22,8 +22,8 @@ router.post('/signup', (req, res, next) => {
       return User.create({ email, password: hashedPassword, name, birthday, gender, animal, height, weight, area, lang, aboutMe, url });
     })
     .then((createdUser) => {
-      const { email, password, name, birthday, gender, animal, height, weight, area, lang, aboutMe, url, _id } = createdUser;
-      const user = { email, password, name, birthday, gender, animal, height, weight, area, lang, aboutMe, url, _id };
+      const { email, name, birthday, gender, animal, height, weight, area, lang, aboutMe, url, _id } = createdUser;
+      const user = { email, name, birthday, gender, animal, height, weight, area, lang, aboutMe, url, _id };
       res.status(201).json({ user: user });
     })
     .catch((err) => {

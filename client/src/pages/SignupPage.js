@@ -131,6 +131,7 @@ function SignupPage(props) {
               type='date'
               name='birthday'
               value={birthday}
+              max={new Date().toISOString().split("T")[0]}
               onChange={(e) => setBirthday(e.target.value)}
               required
             />
