@@ -33,6 +33,88 @@ Since dating apps become one of the mainstream tools for connecting human being,
   CLOUDINARY_API_SECRET
   ```
 
+## File Structure
+
+```
+dating-apes
+ ┣ client
+ ┃   ┣ build
+ ┃   ┣ node_modules
+ ┃   ┣ public
+ ┃   ┣ .gitignore
+ ┃   ┣ package.json
+ ┃   ┗ src
+ ┃      ┣ App.js
+ ┃      ┣ App.css
+ ┃      ┣ index.js
+ ┃      ┣ index.css
+ ┃      ┣ components
+ ┃      ┃     ┣ Navbar.js
+ ┃      ┃     ┣ IsAnon.js
+ ┃      ┃     ┣ IsPrivate.js
+ ┃      ┃     ┣ UserCard.js
+ ┃      ┃     ┣ MessageCard.js
+ ┃      ┃     ┣ AddAText.js
+ ┃      ┃     ┣ ConvertZodiac.js
+ ┃      ┃     ┗ MatchPer.js
+ ┃      ┣ context
+ ┃      ┃     ┗ auth.context.js
+ ┃      ┗ pages
+ ┃            ┣ HomePage.js
+ ┃            ┣ SignupPage.js
+ ┃            ┣ LoginPage.js
+ ┃            ┣ UserListPage.js
+ ┃            ┗ UserDetailsPage.js
+ ┃           
+ ┣ server.js
+ ┣ app.js
+ ┣ .env
+ ┣ models
+ ┃   ┣ User.model.js
+ ┃   ┗ Message.model.js
+ ┣ routes
+ ┃   ┣ index.routes.js
+ ┃   ┣ auth.routes.js
+ ┃   ┣ user.routes.js
+ ┃   ┗ message.routes.js
+ ┣ db
+ ┃   ┗ index.js
+ ┣ middleware
+ ┃   ┗ jwt.middleware.js
+ ┣ error-handling
+ ┃   ┗ index.js
+ ┣ config
+ ┃   ┗ index.js
+ ┣ node_modules
+ ┣ .gitignore
+ ┣ package.json
+ ┗ README.md
+
+ ```
+client-side
+- `client` folder contains the client-side code for the application.
+    - `build` folder contains the compiled and minified production build of the client-side code.
+    - `public` folder contains the static assets that are not processed by webpack.
+    - `src` folder contains the source code for the client-side application.
+        - `App.js` is the root component of the React application.
+        - `App.css` contains styles specific to the App component.
+        - `index.js` is the entry point for the React application and renders the App component.
+        - `components` folder contains smaller components that make up the UI of the application.
+        - `context` folder contains the auth.context.js file, which is the context provider for authentication.
+        - `pages` folder contains components that represent routes for the application.
+
+server-side
+- `server.js` is the entry point for the server and exports the Express app.
+- `app.js` sets up an Express application that imports environment variables, connects to a database, adds middleware, defines routes, serves static files, and sets up error handling.
+- `.env` contains environment variables for the application.
+- `models` folder contains the Mongoose models for the application.
+- `routes` folder contains the route handlers for the server.
+- `db/index.js` connects to a MongoDB database using Mongoose.
+- `middleware/jwt.middleware.js` exports the middleware for verifying JWT tokens.
+- `error-handling/index.js` exports the error-handling middleware for the server.
+- `config/index.js` exports a middleware function that sets up a Express application with common middleware such as CORS, logging, cookie parsing, and JSON body parsing.
+
+
 ## NPM Packages
 
 - Promise based HTTP client - [axios](https://github.com/mzabriskie/axios)@0.27.2
