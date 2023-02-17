@@ -11,28 +11,28 @@ function AuthProviderWrapper(props) {
     localStorage.setItem('authToken', token);
   };
 
-  const verifyStoredToken = () => {
-    const storedToken = localStorage.getItem('authToken');
-    if (storedToken) {
-      return axios
-        .get(`/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
-        .then((response) => {
-          const user = response.data;
-          setUser(user);
-          setIsLoggedIn(true);
-          setIsLoading(false);
-        })
-        .catch((err) => {
-          setUser(null);
-          setIsLoggedIn(false);
-          setIsLoading(false);
-        });
-    } else {
-      setIsLoggedIn(false);
-      setIsLoading(false);
+  const verifyStoredToken = async () => {
+    try {
+      const storedToken = localStorage.getItem('authToken');
+      if (storedToken) {
+        const response = await axios.get(`/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } });
+        const user = response.data;
+        setUser(user);
+        setIsLoggedIn(true);
+      }
+      else {
+        setUser(null);
+        setIsLoggedIn(false);
+      }
+    } catch (error) {
+      console.error(error);
       setUser(null);
+      setIsLoggedIn(false);
+    } finally {
+      setIsLoading(false);
     }
   };
+
 
   const removeToken = () => {
     localStorage.removeItem('authToken');
