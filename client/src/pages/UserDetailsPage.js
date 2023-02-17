@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import AddAText from '../components/AddAText';
 import MessageCard from '../components/MessageCard';
-import ConvertZodiac from '../components/ConvertZodiac';
+import ConvertZodiac from '../utils/ConvertZodiac';
 
 function UserDetailsPage(props) {
   const [user, setUser] = useState(null);

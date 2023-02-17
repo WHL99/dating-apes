@@ -48,15 +48,16 @@ dating-apes
  ┃      ┣ App.css
  ┃      ┣ index.js
  ┃      ┣ index.css
+ ┃      ┣ utils
+ ┃      ┃     ┣ ConvertZodiac.js
+ ┃      ┃     ┗ MatchPercentage.js
  ┃      ┣ components
  ┃      ┃     ┣ Navbar.js
  ┃      ┃     ┣ IsAnon.js
  ┃      ┃     ┣ IsPrivate.js
  ┃      ┃     ┣ UserCard.js
  ┃      ┃     ┣ MessageCard.js
- ┃      ┃     ┣ AddAText.js
- ┃      ┃     ┣ ConvertZodiac.js
- ┃      ┃     ┗ MatchPer.js
+ ┃      ┃     ┗ AddAText.js
  ┃      ┣ context
  ┃      ┃     ┗ auth.context.js
  ┃      ┗ pages

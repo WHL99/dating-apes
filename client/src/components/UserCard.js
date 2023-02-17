@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import locationIcon from './../images/location.png';
-import MatchPer from './MatchPer';
+import MatchPercentage from '../utils/MatchPercentage';
 
 function UserCard({ user }) {
   const { name, birthday, _id, url, area } = user;
@@ -32,7 +32,7 @@ function UserCard({ user }) {
               </div>
 
               <div className='UserCard-2-2'>
-                <MatchPer />
+                <MatchPercentage />
               </div>
             </div>
           </div>
