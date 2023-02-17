@@ -100,6 +100,7 @@ client-side
         - `App.js` is the root component of the React application.
         - `App.css` contains styles specific to the App component.
         - `index.js` is the entry point for the React application and renders the App component.
+        - `utils` folder contains utility pieces that are used by the client-side code.
         - `components` folder contains smaller components that make up the UI of the application.
         - `context` folder contains the auth.context.js file, which is the context provider for authentication.
         - `pages` folder contains components that represent routes for the application.
