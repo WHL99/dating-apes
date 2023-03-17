@@ -63,7 +63,6 @@ function Navbar() {
                 className='btn-hover'
                 style={{
                   backgroundColor: 'transparent',
-                  border: '1px solid yellow',
                   border: 'none',
                   padding: '8px 27px 8px 27px',
                   color: 'black',
@@ -92,7 +91,6 @@ function Navbar() {
                 className='btn-hover'
                 style={{
                   backgroundColor: 'transparent',
-                  border: '1px solid yellow',
                   border: 'none',
                   padding: '8px 27px 8px 27px',
                   color: 'black',
