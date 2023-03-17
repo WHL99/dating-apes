@@ -1,10 +1,15 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
-const userSchema = new Schema({
+
+const userBasicInfoSchema = new Schema({
   email: { type: String, unique: true, required: true },
-  password: { type: String, required: true },
+  password: { type: String, required: true, select: false },
+  passwordHash: String,
+});
+
+const userProfileSchema = new Schema({
   name: String,
-  birthday: { type: Date },
+  birthday: Date,
   gender: String,
   animal: String,
   height: Number,
@@ -12,15 +17,19 @@ const userSchema = new Schema({
   area: String,
   lang: String,
   aboutMe: String,
-  passwordHash: String,
   url: String,
   messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
-},
+});
+
+const userSchema = new Schema(
+  {
+    ...userBasicInfoSchema.obj,
+    ...userProfileSchema.obj,
+  },
   {
     timestamps: true,
   }
 );
 
 const User = model('User', userSchema);
-
 module.exports = User;
