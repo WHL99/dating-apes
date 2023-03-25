@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import Navbar from '../components/Navbar';
+import TextInputField from '../components/forms/TextInputField';
 
 function LoginPage(props) {
   const [email, setEmail] = useState('');
@@ -35,15 +36,9 @@ function LoginPage(props) {
       <Navbar />
       <form className='Signup-9-Login' onSubmit={handleLoginSubmit}>
         <h3>Let's find someone for your pet &nbsp; ٩(^ᴗ^)۶ </h3>
-        <div className='Signup-9-1'>
-          <label>email :</label>
-          <input type='email' name='email' value={email} onChange={handleEmail} />
-        </div>
-        <div className='Signup-9-1'>
-          <label>password :</label>
-          <input type='password' name='password' value={password} onChange={handlePassword} />
-        </div>
-        <div className='Signup-9-1'>
+        <TextInputField name='email' label='Email' type='email' value={email} onChange={handleEmail} required='required' />
+        <TextInputField name='password' label='Password' type='password' value={password} onChange={handlePassword} required='required' />
+        <div className='main-info-input'>
           <button className='btn-hover' style={{ borderRadius: '30px', marginTop: '1.5vh' }} type='submit'>
             LOGIN
           </button>

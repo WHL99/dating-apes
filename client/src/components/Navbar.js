@@ -100,7 +100,7 @@ function Navbar() {
                   marginRight: '30px',
                 }}
               >
-                {user.email.toString().split('@')[0].toUpperCase()}'s FEEDS
+                {user.email?.toString().split('@')[0].toUpperCase()}'s FEEDS
               </button>
             </a>
           </div>

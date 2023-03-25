@@ -13,14 +13,14 @@ const userRouter = require("./routes/user.routes");
 app.use("/api", isAuthenticated, userRouter);
 
 const messageRouter = require('./routes/message.routes');
-app.use('/api', messageRouter);  
+app.use('/api', messageRouter);
 
 
 const path = require('path');
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.use((req, res) => {
-    res.sendFile(__dirname + "/client/build/index.html");
-  });
+  res.sendFile(__dirname + "/client/build/index.html");
+});
 
 require("./error-handling")(app);
 
