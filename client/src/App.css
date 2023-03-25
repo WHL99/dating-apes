@@ -87,7 +87,7 @@ body {
   justify-content: flex-start;
 }
 
-.Signup-9-1 {
+.main-info-input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -107,7 +107,7 @@ body {
   height: auto;
 }
 
-.container-Signup-9-1 {
+.container-main-info-input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -143,7 +143,7 @@ select {
   border: 0px;
 }
 
-.Signup-9-1>button {
+.main-info-input>button {
   padding: 5px;
   border: 0px;
   padding: 8px 8px;
@@ -310,7 +310,7 @@ select {
   width: 40vw;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .UserDetail-04 {

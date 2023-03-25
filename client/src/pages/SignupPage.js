@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import Swal from 'sweetalert2';
+import TextInputField from '../components/forms/TextInputField';
 
 function SignupPage(props) {
   const [email, setEmail] = useState('');
@@ -104,15 +105,9 @@ function SignupPage(props) {
       <Navbar />
       <form className='Signup-9' onSubmit={handleSignupSubmit}>
         <h3>Please fill the form for your pet_</h3>
-        <div className='Signup-9-1'>
-          <label>email :</label>
-          <input type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <div className='Signup-9-1'>
-          <label>password :</label>
-          <input type='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-        </div>
-        <div className='container-Signup-9-1'>
+        <TextInputField name='email' label='Email' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required='required' />
+        <TextInputField name='password' label='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} required='required' />
+        <div className='container-main-info-input'>
           <div className='container-inner'>
             <label>name :</label>
             <input
@@ -137,7 +132,7 @@ function SignupPage(props) {
             />
           </div>
         </div>
-        <div className='container-Signup-9-1'>
+        <div className='container-main-info-input'>
           <div className='container-inner-3'>
             <label>gender :</label>
             <select
@@ -177,7 +172,7 @@ function SignupPage(props) {
           </div>
         </div>
 
-        <div className='container-Signup-9-1'>
+        <div className='container-main-info-input'>
           <div className='container-inner'>
             <label>height (cm) :</label>
             <input
@@ -213,7 +208,7 @@ function SignupPage(props) {
           </div>
         </div>
 
-        <div className='Signup-9-1'>
+        <div className='main-info-input'>
           <label>about me :</label>
           <textarea
             style={{ border: 'none', marginBottom: '1vh' }}
@@ -227,19 +222,20 @@ function SignupPage(props) {
           />
         </div>
 
-        <div className='Signup-9-1'>
+        <div className='main-info-input'>
           <label>upload profile photo :</label>
           <input type='file' onChange={(e) => setImage(e.target.files[0])} required></input>
         </div>
 
-        <div className='Signup-9-1'>
+        <div className='main-info-input'>
           <button className='btn-hover' style={{ borderRadius: '30px', marginTop: '1.5vh' }} type='submit'>
             SIGN UP
           </button>
         </div>
-      </form>
-      {errorMessage && <p className='error-message'>{errorMessage}</p>}
-    </div>
+      </form >
+      {errorMessage && <p className='error-message'>{errorMessage}</p>
+      }
+    </div >
   );
 }
 
