@@ -1,5 +1,5 @@
 ---
-name: setup-env
+name: setup-and-run
 description: Set up and start the dating-apes dev environment (backend + client installs, .env check, run both dev servers). Use when the user asks to set up, install, or start this project.
 ---
 
